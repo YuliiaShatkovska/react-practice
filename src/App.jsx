@@ -32,7 +32,7 @@ export const App = () => {
     order: null,
   });
 
-  const visiblePeople = getVisibleProduct(productsList, {
+  const visibleProduct = getVisibleProduct(productsList, {
     userFilter,
     searchFilter,
     categoryFilter,
@@ -164,7 +164,7 @@ export const App = () => {
         </div>
 
         <div className="box table-container">
-          {visiblePeople.length > 0 ? (
+          {visibleProduct.length > 0 ? (
             <table
               data-cy="ProductTable"
               className="table is-striped is-narrow is-fullwidth"
@@ -218,7 +218,7 @@ export const App = () => {
               </thead>
 
               <tbody>
-                {visiblePeople.map(product => {
+                {visibleProduct.map(product => {
                   return (
                     <tr data-cy="Product" key={product.id}>
                       <td className="has-text-weight-bold" data-cy="ProductId">
